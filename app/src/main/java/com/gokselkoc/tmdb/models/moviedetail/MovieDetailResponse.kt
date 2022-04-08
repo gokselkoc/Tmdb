@@ -79,5 +79,5 @@ data class MovieDetailResponse(
     val voteAverage: Double,
 
     @JsonProperty("vote_count")
-    val voteCount: Int
+    val voteCount: Int,
 )

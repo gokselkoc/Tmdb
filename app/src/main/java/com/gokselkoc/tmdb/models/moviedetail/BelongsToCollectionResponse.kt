@@ -15,5 +15,5 @@ data class BelongsToCollectionResponse(
     val name: String,
 
     @JsonProperty("poster_path")
-    val posterPath: String?
+    val posterPath: String?,
 )

@@ -1,14 +1,13 @@
 package com.gokselkoc.tmdb.repositories.movie
 
 import com.gokselkoc.tmdb.models.movie.MovieGeneralResponse
-import com.gokselkoc.tmdb.models.moviedetail.MovieDetailResponse
 import com.gokselkoc.tmdb.resource.Resource
 import kotlinx.coroutines.flow.Flow
 
 interface MovieRepository {
 
 
-    fun getPopularMovies(page: Int, API_KEY: String?): Flow<Resource<MovieGeneralResponse>>
+    fun getPopularMovies(page: Int): Flow<Resource<MovieGeneralResponse>>
 
     //fun getUpcomingMovies(page: Int, API_KEY: String?): Flow<Resource<MovieGeneralResponse>>
 

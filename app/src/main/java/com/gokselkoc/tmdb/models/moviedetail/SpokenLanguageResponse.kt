@@ -12,5 +12,5 @@ data class SpokenLanguageResponse(
     val iso6391: String,
 
     @JsonProperty("name")
-    val name: String
+    val name: String,
 )

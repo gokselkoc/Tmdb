@@ -12,8 +12,6 @@ import kotlinx.coroutines.flow.flowOn
 @ExperimentalCoroutinesApi
 abstract class BaseRepository {
 
-
-
     fun <T : Any> onApiCall(call: suspend () -> T): Flow<Resource<T>> =
         flow {
             emit(Resource.loading(null))
@@ -22,33 +20,6 @@ abstract class BaseRepository {
             if (BuildConfig.DEBUG) {
                 error.printStackTrace()
             }
-            emit(Resource.error(error.localizedMessage,null))
+            emit(Resource.error(error.localizedMessage, null))
         }.flowOn(Dispatchers.IO)
-/*
-    private fun recordException(error: Throwable) {
-        Firebase.crashlytics.recordException(error)
-    }
-
-    fun <T : Any> onRoomCall(call: suspend () -> T): Flow<Resource<T>> =
-        flow {
-            emit(Resource.Loading)
-            emit(Resource.Success(data = call.invoke()))
-        }.catch { error ->
-            if (BuildConfig.DEBUG) {
-                error.printStackTrace()
-            }
-            recordException(error)
-            emit(Resource.Error(error))
-        }.flowOn(dispatcher)
-
-    fun <T : Any?> onRoomFlowCall(call: Flow<T>): Flow<Resource<T>> =
-        flow {
-            emit(Resource.Loading)
-            call.collect {
-                emit(Resource.Success(it))
-            }
-        }.catch {
-            recordException(Throwable("onRoomFlowCall"))
-            emit(Resource.Error(it))
-        }.flowOn(dispatcher)*/
 }

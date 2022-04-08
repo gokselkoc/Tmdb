@@ -6,7 +6,7 @@ import com.gokselkoc.tmdb.enum.Status
 data class Resource<out T>(
     val status: Status,
     val data: T?,
-    val message: String?
+    val message: String?,
 ) {
     companion object {
 

@@ -9,5 +9,5 @@ data class GenreResponse(
     val id: String,
 
     @JsonProperty("name")
-    val name: String
+    val name: String,
 )
