@@ -7,7 +7,7 @@ data class MovieGeneralResponse(
     @JsonProperty("page")
     val page: Int?,
     @JsonProperty("results")
-    val results: List<MovieResponse>,
+    val results: ArrayList<MovieResponse>,
     @JsonProperty("total_results")
     val totalResults: Int?,
     @JsonProperty("total_pages")

@@ -8,4 +8,5 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="main_color">#EF2636</color>
+    <color name="home_fragment_text_views_color">#B00020</color>
 </resources>

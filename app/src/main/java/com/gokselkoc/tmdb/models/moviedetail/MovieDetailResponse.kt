@@ -6,6 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty
 
 data class MovieDetailResponse(
 
+    @JsonProperty("id")
+    val id: String,
+
     @JsonProperty("adult")
     val adult: Boolean,
 
@@ -23,9 +26,6 @@ data class MovieDetailResponse(
 
     @JsonProperty("homepage")
     val homepage: String?,
-
-    @JsonProperty("id")
-    val id: String,
 
     @JsonProperty("imdb_id")
     val imdbId: String?,

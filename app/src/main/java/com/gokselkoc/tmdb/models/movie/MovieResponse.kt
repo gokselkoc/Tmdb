@@ -1,9 +1,16 @@
 package com.gokselkoc.tmdb.models.movie
 
+import android.os.Parcelable
 import com.fasterxml.jackson.annotation.JsonProperty
+import kotlinx.android.parcel.Parcelize
+import kotlinx.serialization.Serializable
 
+@Serializable
+@Parcelize
 data class MovieResponse(
 
+    @JsonProperty("id")
+    val id: Int,
     @JsonProperty("poster_path")
     val posterPath: String?,
     @JsonProperty("adult")
@@ -14,8 +21,6 @@ data class MovieResponse(
     val releaseDate: String,
     @JsonProperty("genre_ids")
     val genreIds: List<Int>,
-    @JsonProperty("id")
-    val id: Int,
     @JsonProperty("original_title")
     val originalTitle: String,
     @JsonProperty("original_language")
@@ -33,4 +38,4 @@ data class MovieResponse(
     @JsonProperty("vote_average")
     val voteAverage: Double,
 
-    )
+    ) : Parcelable
