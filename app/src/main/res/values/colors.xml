@@ -9,4 +9,7 @@
     <color name="white">#FFFFFFFF</color>
     <color name="main_color">#EF2636</color>
     <color name="home_fragment_text_views_color">#B00020</color>
+
+    <color name="transparent_black">#66000000</color>
+
 </resources>

@@ -1,4 +1,4 @@
-package com.gokselkoc.tmdb.binding
+package com.gokselkoc.tmdb.extension
 
 import android.content.Context
 import android.graphics.Color
@@ -41,7 +41,8 @@ fun setMovieImage(imageView: ImageView, url: String?) {
     } else {
         Urls.BASE_IMAGE_URL + imageUrl
     }
-    imageView.downLoadView(url = imageUrl, progressDrawable = placeHolderProgressBar(imageView.context))
+    imageView.downLoadView(url = imageUrl,
+        progressDrawable = placeHolderProgressBar(imageView.context))
 }
 
 

@@ -1,10 +1,11 @@
 package com.gokselkoc.tmdb.ui.home
 
 import android.util.Log
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.gokselkoc.tmdb.enum.Status
-import com.gokselkoc.tmdb.models.movie.MovieGeneralResponse
 import com.gokselkoc.tmdb.models.movie.MovieResponse
 import com.gokselkoc.tmdb.repositories.movie.MovieRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -19,16 +20,13 @@ class MovieViewModel
 @Inject constructor(private val movieRepository: MovieRepository) : ViewModel() {
 
     private var _popularMoviePage = 0
-    val popularMoviePage = _popularMoviePage
 
-    private val _popularMovieRespons = MutableSharedFlow<MovieGeneralResponse>()
-    val popularMovieRespons = _popularMovieRespons.asSharedFlow()
+    private val _popularMovieResponse = MutableLiveData<ArrayList<MovieResponse>>()
+    val popularMovieResponse: LiveData<ArrayList<MovieResponse>> = _popularMovieResponse
 
     private val _onClickedItemFlow = MutableSharedFlow<MovieResponse>()
     val onClickedItemFlow = _onClickedItemFlow.asSharedFlow()
 
-    private var _popularMovieCurrentList = arrayListOf<MovieResponse>()
-    var popularMovieCurrentList = _popularMovieCurrentList
 
     init {
         getPopularMovies()
@@ -45,12 +43,10 @@ class MovieViewModel
         _popularMoviePage++
         viewModelScope.launch {
             movieRepository.getPopularMovies(_popularMoviePage).collect {
-
                 if (it.status == Status.SUCCESS) {
                     it.let {
                         it.data?.let { data ->
-                            _popularMovieRespons.emit(data)
-                            _popularMovieCurrentList.addAll(data.results)
+                            _popularMovieResponse.value = data.results
                         }
                     }
                 } else if (it.status == Status.ERROR) {

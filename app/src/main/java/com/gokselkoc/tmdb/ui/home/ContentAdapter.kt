@@ -14,18 +14,10 @@ class ContentAdapter(
 ) :
     RecyclerView.Adapter<ContentAdapter.ViewHolder>() {
 
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val inflater = LayoutInflater.from(parent.context)
         val binding = ContentItemViewBinding.inflate(inflater, parent, false)
         return ViewHolder(binding, viewModel)
-    }
-
-
-    fun updateAdapter(newList: ArrayList<MovieResponse>) {
-        list.clear()
-        list.addAll(newList)
-        notifyDataSetChanged()
     }
 
     fun addToAdapter(newList: ArrayList<MovieResponse>) {

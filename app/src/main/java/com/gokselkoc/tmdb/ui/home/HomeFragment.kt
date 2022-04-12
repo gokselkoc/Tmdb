@@ -4,13 +4,13 @@ package com.gokselkoc.tmdb.ui.home
 import android.os.Bundle
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
-import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.gokselkoc.tmdb.R
 import com.gokselkoc.tmdb.base.BaseVmDbFragment
 import com.gokselkoc.tmdb.constants.Keys
 import com.gokselkoc.tmdb.databinding.FragmentHomeBinding
 import com.gokselkoc.tmdb.extension.navigateSafe
+import com.gokselkoc.tmdb.extension.observe
 import com.gokselkoc.tmdb.models.movie.MovieResponse
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.ExperimentalCoroutinesApi
@@ -31,10 +31,10 @@ class HomeFragment : BaseVmDbFragment<FragmentHomeBinding>() {
     }
 
     override fun onInitDataBinding() {
-        homeGetPopularMovies()
+        observe(viewModel.popularMovieResponse, ::homeGetPopularMovies)
         homeClickedItem()
-        //Scroll Listener
-        // recyclerViewScroll()
+        recyclerViewScroll()
+        viewBinding.popularMovieRecyclerView.adapter = contentAdapter
     }
 
     fun recyclerViewScroll() {
@@ -44,48 +44,21 @@ class HomeFragment : BaseVmDbFragment<FragmentHomeBinding>() {
 
                 override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
                     super.onScrolled(recyclerView, dx, dy)
-                    val layoutManager: LinearLayoutManager = layoutManager as LinearLayoutManager
 
-                    val visibleItemCount = layoutManager.childCount
-                    val totalItemCount = layoutManager.itemCount
-                    // val lastAdapterItemPositon = layoutManager.findLastVisibleItemPosition()
-                    val firstVisibleItemPosition = layoutManager.findFirstVisibleItemPosition()
-
-
-                    if (visibleItemCount + firstVisibleItemPosition >= totalItemCount - 3 && firstVisibleItemPosition >= 0) {
+                    if (!viewBinding.popularMovieRecyclerView.canScrollHorizontally(1)) {
 
                         viewModel.addNewItemsPopularMovies()
-                        homeGetPopularMovies()
                     }
                 }
             })
         }
     }
 
+    private fun homeGetPopularMovies(movieResponseList: ArrayList<MovieResponse>) {
+        contentAdapter.addToAdapter(movieResponseList)
+    }
+
     override fun getResourceLayoutId(): Int = R.layout.fragment_home
-
-
-    private fun updatePopularMovies() {
-        lifecycleScope.launch {
-            viewModel.popularMovieRespons.collect { movieGeneralResponse ->
-                movieGeneralResponse.results.let { movieResponse ->
-                    contentAdapter.addToAdapter(movieResponse)
-                }
-            }
-        }
-        viewBinding.popularMovieRecyclerView.adapter = contentAdapter
-    }
-
-    private fun homeGetPopularMovies() {
-        lifecycleScope.launch {
-            viewModel.popularMovieRespons.collect { movieGeneralResponse ->
-                movieGeneralResponse.results.let { movieResponse ->
-                    contentAdapter.addToAdapter(movieResponse)
-                }
-            }
-        }
-        viewBinding.popularMovieRecyclerView.adapter = contentAdapter
-    }
 
     private fun homeClickedItem() {
         lifecycleScope.launch {

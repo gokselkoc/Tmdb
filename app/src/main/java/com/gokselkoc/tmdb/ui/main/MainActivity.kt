@@ -2,11 +2,8 @@ package com.gokselkoc.tmdb.ui.main
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.navigation.NavController
-import androidx.navigation.NavDirections
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
-import com.gokselkoc.tmdb.R
 import com.gokselkoc.tmdb.databinding.ActivityMainBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import dagger.hilt.android.AndroidEntryPoint
@@ -23,7 +20,6 @@ class MainActivity : AppCompatActivity() {
         bottomMenuNavGraph(binding.mainFragmentNavHost.id, binding.mainBottomMenuNav)
 
     }
-
 
 
     private fun bottomMenuNavGraph(navHostFragmentId: Int, bottomMenuView: BottomNavigationView) {
