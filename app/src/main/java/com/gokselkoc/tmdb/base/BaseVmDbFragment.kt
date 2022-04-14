@@ -13,7 +13,7 @@ abstract class BaseVmDbFragment<DB : ViewDataBinding> :
     BaseFragment() {
 
     protected lateinit var viewBinding: DB
-
+    open fun DB.initialize() {}
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -21,6 +21,8 @@ abstract class BaseVmDbFragment<DB : ViewDataBinding> :
     ): View? {
         viewBinding = DataBindingUtil.inflate(inflater, getResourceLayoutId(), container, false)
         viewBinding.lifecycleOwner = viewLifecycleOwner
+        setHasOptionsMenu(true)
+        viewBinding.initialize()
         return viewBinding.root
     }
 

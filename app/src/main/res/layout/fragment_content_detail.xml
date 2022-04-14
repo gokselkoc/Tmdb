@@ -3,19 +3,160 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <data>
+
+        <variable
+            name="movie_response"
+            type="com.gokselkoc.tmdb.models.movie.MovieResponse" />
+    </data>
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".ui.detail.movie.ContentDetailFragment">
+        tools:context="com.gokselkoc.tmdb.ui.detail.movie.ContentDetailFragment">
 
-        <TextView
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/scroll_view"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Fragment Detail"
-            android:textAlignment="center"
-            android:textSize="@dimen/text_size_24"
+            android:layout_height="match_parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/height_350">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/image_view"
+                        imageUrl="@{movie_response.posterPath}"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:fitsSystemWindows="true"
+                        android:foreground="@drawable/background_image"
+                        android:scaleType="center"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/movie_title_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/margin_10"
+                        android:layout_marginHorizontal="@dimen/margin_4"
+                        android:text="@{movie_response.originalTitle}"
+                        android:textAlignment="center"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/text_size_24"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <LinearLayout
+                        android:id="@+id/overview_progress_linear"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_10"
+                        android:orientation="horizontal"
+                        android:paddingTop="@dimen/padding_8"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <TextView
+                            android:id="@+id/overview_tv"
+                            android:layout_width="@dimen/width_0"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="219"
+                            android:paddingStart="@dimen/padding_10"
+                            android:text="@{movie_response.overview}"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/text_size_12" />
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="@dimen/_40sdp"
+                            android:layout_height="@dimen/_20sdp"
+                            android:layout_marginEnd="@dimen/margin_14"
+                            android:layout_weight="1"
+                            android:background="@{movie_response.voteAverage > 6.0 ? @drawable/vote_average_tv_background_high : @drawable/vote_average_tv_background_low}">
+
+                            <TextView
+                                android:id="@+id/textView"
+                                android:layout_width="@dimen/width_34"
+                                android:layout_height="@dimen/height_20"
+                                android:layout_marginStart="@dimen/margin_3"
+                                android:gravity="center"
+                                android:paddingEnd="@dimen/padding_4"
+                                android:paddingBottom="@dimen/padding_4"
+                                android:text="@{Double.toString(movie_response.voteAverage)}"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/text_size_14"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:layout_width="@dimen/width_40"
+                                android:layout_height="@dimen/height_15"
+                                android:layout_marginStart="@dimen/margin_8"
+                                android:layout_marginEnd="@dimen/margin_1"
+                                android:layout_marginBottom="@dimen/margin_2"
+                                android:gravity="center"
+                                android:text="@string/vote_average"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/text_size_10"
+                                app:layout_constraintBottom_toBottomOf="@+id/textView"
+                                app:layout_constraintEnd_toEndOf="@+id/textView"
+                                app:layout_constraintStart_toEndOf="@+id/textView" />
+
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/release_date_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_14"
+                        android:paddingStart="@dimen/padding_8"
+                        android:text="@string/release_date"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/text_size_14"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/overview_progress_linear" />
+
+                    <TextView
+                        android:id="@+id/release_date_data_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/margin_5"
+                        android:text="@{movie_response.releaseDate}"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/text_size_14"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintLeft_toRightOf="@id/release_date_tv"
+                        app:layout_constraintTop_toTopOf="@id/release_date_tv" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

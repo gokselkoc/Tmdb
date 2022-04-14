@@ -32,7 +32,7 @@ fun placeHolderProgressBar(context: Context): CircularProgressDrawable {
     }
 }
 
-@BindingAdapter("android:imageUrl")
+@BindingAdapter("imageUrl")
 fun setMovieImage(imageView: ImageView, url: String?) {
 
     var imageUrl = url

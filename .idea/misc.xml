@@ -3,21 +3,27 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/AndroidStudioProjects/Tmdb/app/src/main/res/drawable/background_image.xml" value="0.1955" />
         <entry key="..\:/AndroidStudioProjects/Tmdb/app/src/main/res/drawable/ic_android_black_24dp.xml" value="0.196" />
         <entry key="..\:/AndroidStudioProjects/Tmdb/app/src/main/res/drawable/ic_baseline_android_24.xml" value="0.196" />
         <entry key="..\:/AndroidStudioProjects/Tmdb/app/src/main/res/drawable/ic_baseline_crop_square_24.xml" value="0.196" />
         <entry key="..\:/AndroidStudioProjects/Tmdb/app/src/main/res/drawable/ic_home.xml" value="0.196" />
+        <entry key="..\:/AndroidStudioProjects/Tmdb/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2095" />
         <entry key="..\:/AndroidStudioProjects/Tmdb/app/src/main/res/drawable/ic_movies.xml" value="0.196" />
         <entry key="..\:/AndroidStudioProjects/Tmdb/app/src/main/res/drawable/ic_person.xml" value="0.196" />
         <entry key="..\:/AndroidStudioProjects/Tmdb/app/src/main/res/drawable/ic_person_active_avd.xml" value="0.196" />
         <entry key="..\:/AndroidStudioProjects/Tmdb/app/src/main/res/drawable/ic_tv_shows.xml" value="0.196" />
+        <entry key="..\:/AndroidStudioProjects/Tmdb/app/src/main/res/drawable/vote_average_tv_background.xml" value="0.6" />
+        <entry key="..\:/AndroidStudioProjects/Tmdb/app/src/main/res/drawable/vote_average_tv_background_high.xml" value="0.2095" />
+        <entry key="..\:/AndroidStudioProjects/Tmdb/app/src/main/res/drawable/vote_average_tv_background_low.xml" value="0.124" />
         <entry key="..\:/AndroidStudioProjects/Tmdb/app/src/main/res/layout/activity_main.xml" value="0.16077898550724637" />
         <entry key="..\:/AndroidStudioProjects/Tmdb/app/src/main/res/layout/content_item_view.xml" value="0.264" />
-        <entry key="..\:/AndroidStudioProjects/Tmdb/app/src/main/res/layout/fragment_content_detail.xml" value="0.2368659420289855" />
+        <entry key="..\:/AndroidStudioProjects/Tmdb/app/src/main/res/layout/fragment_content_detail.xml" value="0.16486486486486487" />
         <entry key="..\:/AndroidStudioProjects/Tmdb/app/src/main/res/layout/fragment_home.xml" value="0.264" />
         <entry key="..\:/AndroidStudioProjects/Tmdb/app/src/main/res/layout/fragment_movies.xml" value="0.23777173913043478" />
         <entry key="..\:/AndroidStudioProjects/Tmdb/app/src/main/res/layout/fragment_profile.xml" value="0.23777173913043478" />
         <entry key="..\:/AndroidStudioProjects/Tmdb/app/src/main/res/layout/fragment_tv_shows.xml" value="0.23777173913043478" />
+        <entry key="..\:/AndroidStudioProjects/Tmdb/app/src/main/res/layout/vote_average_tool.xml" value="0.8800000000000001" />
         <entry key="..\:/AndroidStudioProjects/Tmdb/app/src/main/res/menu/main_bottom_menu.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/gokse/AppData/Local/Temp/drawable-temp/fake_of_anim_person1.xml" value="0.196" />
       </map>

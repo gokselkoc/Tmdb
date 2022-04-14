@@ -1,5 +1,6 @@
 package com.gokselkoc.tmdb.ui.home
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -10,7 +11,7 @@ import kotlinx.coroutines.ExperimentalCoroutinesApi
 @ExperimentalCoroutinesApi
 class ContentAdapter(
     var list: ArrayList<MovieResponse>,
-    private val viewModel: MovieViewModel,
+    private val viewModel: HomeViewModel,
 ) :
     RecyclerView.Adapter<ContentAdapter.ViewHolder>() {
 
@@ -22,6 +23,7 @@ class ContentAdapter(
 
     fun addToAdapter(newList: ArrayList<MovieResponse>) {
         list.addAll(newList)
+        Log.e("ListSize", list.size.toString())
         notifyDataSetChanged()
     }
 
@@ -32,7 +34,7 @@ class ContentAdapter(
 
     inner class ViewHolder(
         private val binding: ContentItemViewBinding,
-        private val dogCeoViewModel: MovieViewModel,
+        private val dogCeoViewModel: HomeViewModel,
     ) : RecyclerView.ViewHolder(binding.root) {
 
         fun bind(item: MovieResponse) {

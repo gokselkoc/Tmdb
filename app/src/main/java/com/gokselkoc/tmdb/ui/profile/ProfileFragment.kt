@@ -1,25 +1,18 @@
 package com.gokselkoc.tmdb.ui.profile
 
-import android.os.Bundle
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import com.gokselkoc.tmdb.R
+import com.gokselkoc.tmdb.base.BaseVmDbFragment
+import com.gokselkoc.tmdb.databinding.FragmentProfileBinding
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.ExperimentalCoroutinesApi
 
+@ExperimentalCoroutinesApi
 @AndroidEntryPoint
-class ProfileFragment : Fragment() {
+class ProfileFragment : BaseVmDbFragment<FragmentProfileBinding>() {
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
+    override fun onInitDataBinding() {
+
     }
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?,
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_profile, container, false)
-    }
+    override fun getResourceLayoutId(): Int = R.layout.fragment_profile
 }

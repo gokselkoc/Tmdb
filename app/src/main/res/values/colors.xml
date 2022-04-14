@@ -8,8 +8,14 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="main_color">#EF2636</color>
+
     <color name="home_fragment_text_views_color">#B00020</color>
+    <color name="vote_average_high_tv_color">#B00020</color>
+    <color name="vote_average_low_tv_color">#f88002</color>
+
 
     <color name="transparent_black">#66000000</color>
+    <color name="lower_transparent_black">#33000000</color>
+    <color name="transparent">#00000000</color>
 
 </resources>

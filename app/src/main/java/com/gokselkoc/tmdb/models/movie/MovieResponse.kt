@@ -2,7 +2,7 @@ package com.gokselkoc.tmdb.models.movie
 
 import android.os.Parcelable
 import com.fasterxml.jackson.annotation.JsonProperty
-import kotlinx.android.parcel.Parcelize
+import kotlinx.parcelize.Parcelize
 import kotlinx.serialization.Serializable
 
 @Serializable
@@ -36,6 +36,6 @@ data class MovieResponse(
     @JsonProperty("video")
     val video: Boolean,
     @JsonProperty("vote_average")
-    val voteAverage: Double,
+    val voteAverage: Double ,
 
     ) : Parcelable
