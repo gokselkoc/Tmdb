@@ -12,6 +12,9 @@
         <action
             android:id="@+id/action_homeFragment_to_contentDetailFragment"
             app:destination="@id/contentDetailFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_tvShowsDetailFragment"
+            app:destination="@id/tvShowsDetailFragment" />
     </fragment>
     <fragment
         android:id="@+id/contentDetailFragment"
@@ -20,6 +23,14 @@
         tools:layout="@layout/fragment_content_detail">
         <action
             android:id="@+id/action_contentDetailFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/tvShowsDetailFragment"
+        android:name="com.gokselkoc.tmdb.ui.detail.tvshows.TvShowsDetailFragment"
+        android:label="TvShowsDetailFragment" >
+        <action
+            android:id="@+id/action_tvShowsDetailFragment_to_homeFragment"
             app:destination="@id/homeFragment" />
     </fragment>
 </navigation>

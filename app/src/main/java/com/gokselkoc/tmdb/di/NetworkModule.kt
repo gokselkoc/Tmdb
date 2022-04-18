@@ -2,6 +2,7 @@ package com.gokselkoc.tmdb.di
 
 import com.gokselkoc.tmdb.BuildConfig
 import com.gokselkoc.tmdb.api.MovieApiService
+import com.gokselkoc.tmdb.api.TvShowsApiService
 import com.gokselkoc.tmdb.api.interceptor.ApplicationInterceptor
 import com.gokselkoc.tmdb.constants.ApiConstants
 import dagger.Module
@@ -50,6 +51,12 @@ object NetworkModule {
     @Singleton
     fun provideMovieApiService(retrofit: Retrofit): MovieApiService {
         return retrofit.create(MovieApiService::class.java)
+    }
+
+    @Provides
+    @Singleton
+    fun provideTvShowsApiService(retrofit: Retrofit): TvShowsApiService {
+        return retrofit.create(TvShowsApiService::class.java)
     }
 
 
