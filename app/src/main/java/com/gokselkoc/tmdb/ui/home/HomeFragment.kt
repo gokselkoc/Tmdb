@@ -2,8 +2,10 @@ package com.gokselkoc.tmdb.ui.home
 
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.viewModels
 import com.gokselkoc.tmdb.R
+import com.gokselkoc.tmdb.application.TmdbApp
 import com.gokselkoc.tmdb.base.BaseVmDbFragment
 import com.gokselkoc.tmdb.constants.Keys
 import com.gokselkoc.tmdb.databinding.FragmentHomeBinding
@@ -24,10 +26,12 @@ class HomeFragment : BaseVmDbFragment<FragmentHomeBinding>() {
 
     private val viewModel by viewModels<HomeViewModel>()
 
+
     private val popularMoviesAdapter: PopularMoviesAdapter by lazy {
         PopularMoviesAdapter(
             ArrayList(),
             viewModel
+
         )
     }
 
@@ -40,6 +44,7 @@ class HomeFragment : BaseVmDbFragment<FragmentHomeBinding>() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         observe(viewModel.onClickedItemLiveData, ::clickedPopularMovieItem)
         observe(viewModel.clickedTvShowsItemLiveData, ::clickedPopularTvShowsItem)
     }
@@ -48,6 +53,7 @@ class HomeFragment : BaseVmDbFragment<FragmentHomeBinding>() {
     override fun onInitDataBinding() {
 
         if (popularMoviesAdapter.list.isEmpty() || popularTvShowsAdapter.list.isEmpty()) {
+
             observe(viewModel.popularMovieResponse, ::homeGetPopularMovies)
             observe(viewModel.popularTvShowsResponse, ::homeGetPopularTvShows)
         }
@@ -74,19 +80,22 @@ class HomeFragment : BaseVmDbFragment<FragmentHomeBinding>() {
     }
 
     private fun clickedPopularMovieItem(data: MovieResponse) {
+        TmdbApp.clickedMovieId = data.id
+        Log.e("clickedDataBind", "done")
         val bundle = Bundle().apply {
             putParcelable(Keys.MOVIE_RESPONSE, data)
         }
         navigateSafe(resId = R.id.action_homeFragment_to_contentDetailFragment, bundle)
     }
 
+
     private fun clickedPopularTvShowsItem(data: TvShowsResponse) {
+
         val bundle = Bundle().apply {
             putParcelable(Keys.TV_SHOWS_RESPONSE, data)
         }
         navigateSafe(resId = R.id.action_homeFragment_to_tvShowsDetailFragment, bundle)
     }
-
 
     override fun getResourceLayoutId(): Int = R.layout.fragment_home
 }

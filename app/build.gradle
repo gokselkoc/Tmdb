@@ -131,4 +131,8 @@ dependencies {
     implementation "androidx.core:core-ktx:+"
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 
+    //FlexBox
+    implementation "com.google.android.flexbox:flexbox:3.0.0"
+
+
 }

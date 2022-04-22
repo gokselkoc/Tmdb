@@ -16,7 +16,7 @@ import javax.inject.Singleton
 @ExperimentalCoroutinesApi
 @InstallIn(SingletonComponent::class)
 @Module
-class RepositoryModule {
+object  RepositoryModule {
 
 
     @Singleton

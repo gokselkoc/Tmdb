@@ -8,6 +8,8 @@
         <variable
             name="movie_response"
             type="com.gokselkoc.tmdb.models.movie.MovieResponse" />
+
+
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -156,6 +158,18 @@
 
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/genre_recycler_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:nestedScrollingEnabled="false"
+                    android:padding="@dimen/padding_8"
+                    app:layoutManager="com.google.android.flexbox.FlexboxLayoutManager"
+                    tools:listitem="@layout/genre_item">
+
+                </androidx.recyclerview.widget.RecyclerView>
             </LinearLayout>
         </androidx.core.widget.NestedScrollView>
     </androidx.constraintlayout.widget.ConstraintLayout>

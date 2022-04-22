@@ -22,7 +22,7 @@ data class MovieDetailResponse(
     val budget: Int,
 
     @JsonProperty("genres")
-    val genres: List<GenreResponse>,
+    val genres: ArrayList<GenreResponse>,
 
     @JsonProperty("homepage")
     val homepage: String?,

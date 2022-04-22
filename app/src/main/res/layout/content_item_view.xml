@@ -12,6 +12,8 @@
         <variable
             name="viewModel"
             type="com.gokselkoc.tmdb.ui.home.HomeViewModel" />
+
+
     </data>
 
     <androidx.cardview.widget.CardView

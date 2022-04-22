@@ -19,6 +19,7 @@ class HomeViewModel @Inject constructor(
     private val tvShowsRepository: TvShowsRepository,
 ) : ViewModel() {
 
+
     private var _popularMoviePage = 0
 
     private val _popularMovieResponse = MutableLiveData<ArrayList<MovieResponse>>()
@@ -35,6 +36,7 @@ class HomeViewModel @Inject constructor(
     fun onClickedMovieItem(data: MovieResponse) {
         _onClickedItemLiveData.value = data
     }
+
 
     private fun getPopularMovies() {
         _popularMoviePage++
@@ -86,7 +88,7 @@ class HomeViewModel @Inject constructor(
         }
     }
 
-    fun addNewItemsPopularTvShows(){
+    fun addNewItemsPopularTvShows() {
         getPopularTvShows()
     }
 

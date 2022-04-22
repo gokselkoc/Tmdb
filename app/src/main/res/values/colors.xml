@@ -18,4 +18,7 @@
     <color name="lower_transparent_black">#33000000</color>
     <color name="transparent">#00000000</color>
 
+    <color name="grey_700">#3E3E3C</color>
+    <color name="grey_200">#19191D</color>
+
 </resources>
