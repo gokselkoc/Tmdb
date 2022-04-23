@@ -12,8 +12,8 @@ import kotlinx.coroutines.ExperimentalCoroutinesApi
 abstract class BaseVmDbFragment<DB : ViewDataBinding> :
     BaseFragment() {
 
-    private  var _viewBinding: DB? = null
-    val viewBinding: DB get() = _viewBinding!!
+    private  var _binding: DB? = null
+    val binding: DB get() = _binding!!
 
     open fun DB.initialize() {}
     override fun onCreateView(
@@ -21,11 +21,11 @@ abstract class BaseVmDbFragment<DB : ViewDataBinding> :
         container: ViewGroup?,
         savedInstanceState: Bundle?,
     ): View? {
-        _viewBinding = DataBindingUtil.inflate(inflater, getResourceLayoutId(), container, false)
-        viewBinding.lifecycleOwner = viewLifecycleOwner
+        _binding = DataBindingUtil.inflate(inflater, getResourceLayoutId(), container, false)
+        binding.lifecycleOwner = viewLifecycleOwner
         setHasOptionsMenu(true)
-        viewBinding.initialize()
-        return viewBinding.root
+        binding.initialize()
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -37,7 +37,7 @@ abstract class BaseVmDbFragment<DB : ViewDataBinding> :
 
     override fun onDestroyView() {
         super.onDestroyView()
-        _viewBinding = null
+        _binding = null
     }
 
 }

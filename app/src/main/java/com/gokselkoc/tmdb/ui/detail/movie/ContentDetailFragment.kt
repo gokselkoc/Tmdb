@@ -34,13 +34,13 @@ class ContentDetailFragment : BaseVmDbFragment<FragmentContentDetailBinding>() {
 
         }
 
-        viewBinding.movieResponse = movieResponse
+        binding.movieResponse = movieResponse
     }
 
     private fun getMovieDetailFragment(data: MovieDetailResponse) {
 
         genreAdapter.addToAdapter(data.genres)
-        viewBinding.genreRecyclerView.adapter = genreAdapter
+        binding.genreRecyclerView.adapter = genreAdapter
     }
 
 

@@ -16,7 +16,7 @@ class TvShowsDetailFragment : BaseVmDbFragment<FragmentTvShowsDetailBinding>() {
 
     override fun onInitDataBinding() {
         val tvShowResponse = arguments?.get(Keys.TV_SHOWS_RESPONSE) as TvShowsResponse
-        viewBinding.tvShowsResponse = tvShowResponse
+        binding.tvShowsResponse = tvShowResponse
     }
 
     override fun getResourceLayoutId(): Int = R.layout.fragment_tv_shows_detail

@@ -58,15 +58,15 @@ class HomeFragment : BaseVmDbFragment<FragmentHomeBinding>() {
             observe(viewModel.popularTvShowsResponse, ::homeGetPopularTvShows)
         }
 
-        viewBinding.popularMovieRecyclerView.adapter = popularMoviesAdapter
+        binding.popularMovieRecyclerView.adapter = popularMoviesAdapter
 
-        viewBinding.homePopularTvShowsRecyclerView.adapter = popularTvShowsAdapter
+        binding.homePopularTvShowsRecyclerView.adapter = popularTvShowsAdapter
 
-        viewBinding.popularMovieRecyclerView.scrollEndListener {
+        binding.popularMovieRecyclerView.scrollEndListener {
             viewModel.addNewItemsPopularMovies()
         }
 
-        viewBinding.homePopularTvShowsRecyclerView.scrollEndListener {
+        binding.homePopularTvShowsRecyclerView.scrollEndListener {
             viewModel.addNewItemsPopularTvShows()
         }
     }
