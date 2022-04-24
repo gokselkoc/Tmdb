@@ -25,16 +25,14 @@ class HomeViewModel @Inject constructor(
     private val _popularMovieResponse = MutableLiveData<ArrayList<MovieResponse>>()
     val popularMovieResponse: LiveData<ArrayList<MovieResponse>> = _popularMovieResponse
 
+    var allPopularMovieList: ArrayList<MovieResponse> = arrayListOf()
+
     private val _onClickedItemLiveData = MutableLiveData<MovieResponse>()
     val onClickedItemLiveData = _onClickedItemLiveData
 
     init {
         getPopularMovies()
         getPopularTvShows()
-    }
-
-    fun onClickedMovieItem(data: MovieResponse) {
-        _onClickedItemLiveData.value = data
     }
 
 
@@ -52,21 +50,27 @@ class HomeViewModel @Inject constructor(
                     Log.e("error", it.message.toString())
                 }
             }
-
         }
+    }
+
+    fun onClickedMovieItem(data: MovieResponse) {
+        _onClickedItemLiveData.value = data
     }
 
     fun addNewItemsPopularMovies() {
         getPopularMovies()
     }
+
     // End -> Popular Movies
 
-    // Start ->Popular Tv Shows
+    // Start -> Popular Tv Shows
 
     private var _popularTvShowsPage = 0
 
     private var _popularTvShowsResponse = MutableLiveData<ArrayList<TvShowsResponse>>()
     val popularTvShowsResponse: LiveData<ArrayList<TvShowsResponse>> = _popularTvShowsResponse
+
+    var allPopularTvShowsList: ArrayList<TvShowsResponse> = arrayListOf()
 
     private val _clickedTvShowsItemLiveData = MutableLiveData<TvShowsResponse>()
     val clickedTvShowsItemLiveData = _clickedTvShowsItemLiveData

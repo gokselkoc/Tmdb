@@ -36,7 +36,6 @@ class MovieDetailViewModel @Inject constructor(
 
                 if (it.status == Status.SUCCESS) {
                     it.data?.let { data ->
-                        Log.e("detay", data.genres.count().toString())
                         _movieDetailResponse.value = data
                     }
                 } else if (it.status == Status.ERROR) {

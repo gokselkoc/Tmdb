@@ -13,6 +13,7 @@
         <entry key="..\:/AndroidStudioProjects/Tmdb/app/src/main/res/drawable/ic_movies.xml" value="0.196" />
         <entry key="..\:/AndroidStudioProjects/Tmdb/app/src/main/res/drawable/ic_person.xml" value="0.196" />
         <entry key="..\:/AndroidStudioProjects/Tmdb/app/src/main/res/drawable/ic_person_active_avd.xml" value="0.196" />
+        <entry key="..\:/AndroidStudioProjects/Tmdb/app/src/main/res/drawable/ic_profile.xml" value="0.2015" />
         <entry key="..\:/AndroidStudioProjects/Tmdb/app/src/main/res/drawable/ic_tv_shows.xml" value="0.196" />
         <entry key="..\:/AndroidStudioProjects/Tmdb/app/src/main/res/drawable/vote_average_tv_background.xml" value="0.6" />
         <entry key="..\:/AndroidStudioProjects/Tmdb/app/src/main/res/drawable/vote_average_tv_background_high.xml" value="0.2095" />
@@ -27,6 +28,7 @@
         <entry key="..\:/AndroidStudioProjects/Tmdb/app/src/main/res/layout/fragment_tv_shows_detail.xml" value="0.25416666666666665" />
         <entry key="..\:/AndroidStudioProjects/Tmdb/app/src/main/res/layout/genre_item.xml" value="0.8" />
         <entry key="..\:/AndroidStudioProjects/Tmdb/app/src/main/res/layout/popular_tv_shows_view.xml" value="0.25" />
+        <entry key="..\:/AndroidStudioProjects/Tmdb/app/src/main/res/layout/test_view_pager_item.xml" value="0.1671875" />
         <entry key="..\:/AndroidStudioProjects/Tmdb/app/src/main/res/layout/vote_average_tool.xml" value="0.8800000000000001" />
         <entry key="..\:/AndroidStudioProjects/Tmdb/app/src/main/res/menu/bottom_menu_nav.xml" value="0.25416666666666665" />
         <entry key="..\:/AndroidStudioProjects/Tmdb/app/src/main/res/menu/main_bottom_menu.xml" value="0.25416666666666665" />

@@ -1,6 +1,5 @@
 package com.gokselkoc.tmdb.ui.home.adapter
 
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -23,8 +22,8 @@ class PopularTvShowsAdapter(
     }
 
     fun addToAdapter(newList: ArrayList<TvShowsResponse>) {
-        list.addAll(newList)
-        Log.e("ListSize", list.size.toString())
+
+        viewModel.allPopularTvShowsList.addAll(newList)
         notifyDataSetChanged()
     }
 
@@ -43,6 +42,5 @@ class PopularTvShowsAdapter(
             binding.viewModel = homeFragmentViewModel
             binding.executePendingBindings()
         }
-
     }
 }

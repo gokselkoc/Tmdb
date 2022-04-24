@@ -1,6 +1,5 @@
 package com.gokselkoc.tmdb.ui.detail.movie.genre
 
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -22,7 +21,6 @@ class GenreAdapter(
     }
 
     fun addToAdapter(newList: ArrayList<GenreResponse>) {
-        Log.e("adapter", "added")
         list.addAll(newList)
         notifyDataSetChanged()
     }

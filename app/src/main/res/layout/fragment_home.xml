@@ -34,7 +34,8 @@
                     android:id="@+id/home_popular_movies_tv"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="@dimen/margin_16"
+                    android:layout_marginHorizontal="@dimen/margin_16"
+                    android:layout_marginVertical="@dimen/margin_20"
                     android:text="@string/popular_movies"
                     android:textColor="@color/home_fragment_text_views_color"
                     android:textSize="@dimen/text_size_23" />
@@ -53,7 +54,8 @@
                     android:id="@+id/home_popular_tv_shows"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="@dimen/margin_16"
+                    android:layout_marginHorizontal="@dimen/margin_16"
+                    android:layout_marginVertical="@dimen/margin_20"
                     android:text="@string/popular_tv_shows"
                     android:textColor="@color/home_fragment_text_views_color"
                     android:textSize="@dimen/text_size_23" />
