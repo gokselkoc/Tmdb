@@ -6,4 +6,6 @@
     <string name="popular_tv_shows">Popular Tv Shows</string>
     <string name="release_date">Release Date:</string>
     <string name="vote_average">/10</string>
+    <string name="video">Video</string>
+    <string name="images">Images</string>
 </resources>

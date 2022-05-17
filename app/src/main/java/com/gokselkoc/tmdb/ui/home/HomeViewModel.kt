@@ -3,8 +3,8 @@ package com.gokselkoc.tmdb.ui.home
 import android.util.Log
 import androidx.lifecycle.*
 import com.gokselkoc.tmdb.enum.Status
-import com.gokselkoc.tmdb.models.movie.MovieResponse
-import com.gokselkoc.tmdb.models.tvshows.TvShowsResponse
+import com.gokselkoc.tmdb.domain.models.movie.MovieResponse
+import com.gokselkoc.tmdb.domain.models.tvshows.TvShowsResponse
 import com.gokselkoc.tmdb.repositories.movie.MovieRepository
 import com.gokselkoc.tmdb.repositories.tvshows.TvShowsRepository
 import dagger.hilt.android.lifecycle.HiltViewModel

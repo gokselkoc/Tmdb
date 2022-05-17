@@ -1,6 +1,6 @@
 package com.gokselkoc.tmdb.api
 
-import com.gokselkoc.tmdb.models.tvshows.TvShowsGeneralResponse
+import com.gokselkoc.tmdb.domain.models.tvshows.TvShowsGeneralResponse
 import retrofit2.http.GET
 import retrofit2.http.Query
 

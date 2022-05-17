@@ -47,11 +47,13 @@ android {
             buildConfigField "String", "API_KEY", "$API_KEY"
             buildConfigField "String", "API_URL", "$API_URL"
             buildConfigField "String", "BASE_IMAGE_URL", "$BASE_IMAGE_URL"
+            buildConfigField "String", "YOUTUBE_API_KEY", "$YOUTUBE_API_KEY"
         }
         prod {
             buildConfigField "String", "API_KEY", "$API_KEY"
             buildConfigField "String", "API_URL", "$API_URL"
             buildConfigField "String", "BASE_IMAGE_URL", "$BASE_IMAGE_URL"
+            buildConfigField "String", "YOUTUBE_API_KEY", "$YOUTUBE_API_KEY"
         }
     }
 
@@ -133,6 +135,9 @@ dependencies {
 
     //FlexBox
     implementation "com.google.android.flexbox:flexbox:3.0.0"
+
+    //YouTube Player
+    implementation files('libs/YouTubeAndroidPlayerApi.jar')
 
 
 }

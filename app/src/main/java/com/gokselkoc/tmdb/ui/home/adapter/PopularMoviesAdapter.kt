@@ -3,8 +3,8 @@ package com.gokselkoc.tmdb.ui.home.adapter
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.gokselkoc.tmdb.databinding.ContentItemViewBinding
-import com.gokselkoc.tmdb.models.movie.MovieResponse
+import com.gokselkoc.tmdb.databinding.MoviesItemViewBinding
+import com.gokselkoc.tmdb.domain.models.movie.MovieResponse
 import com.gokselkoc.tmdb.ui.home.HomeViewModel
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 
@@ -18,7 +18,7 @@ class PopularMoviesAdapter(
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val inflater = LayoutInflater.from(parent.context)
-        val binding = ContentItemViewBinding.inflate(inflater, parent, false)
+        val binding = MoviesItemViewBinding.inflate(inflater, parent, false)
         return ViewHolder(binding, viewModel)
     }
 
@@ -34,7 +34,7 @@ class PopularMoviesAdapter(
         holder.bind(list[position])
 
     inner class ViewHolder(
-        private val binding: ContentItemViewBinding,
+        private val binding: MoviesItemViewBinding,
         private val homeFragmentViewModel: HomeViewModel,
     ) : RecyclerView.ViewHolder(binding.root) {
 

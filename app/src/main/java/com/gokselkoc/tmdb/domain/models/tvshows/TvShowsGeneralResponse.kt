@@ -1,13 +1,13 @@
-package com.gokselkoc.tmdb.models.movie
+package com.gokselkoc.tmdb.domain.models.tvshows
 
 import com.fasterxml.jackson.annotation.JsonProperty
 
-data class MovieGeneralResponse(
+data class TvShowsGeneralResponse(
 
     @JsonProperty("page")
     val page: Int?,
     @JsonProperty("results")
-    val results: ArrayList<MovieResponse>,
+    val results: ArrayList<TvShowsResponse>,
     @JsonProperty("total_results")
     val totalResults: Int?,
     @JsonProperty("total_pages")

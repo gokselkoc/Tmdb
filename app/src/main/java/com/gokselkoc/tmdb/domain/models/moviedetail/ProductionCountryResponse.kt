@@ -1,4 +1,4 @@
-package com.gokselkoc.tmdb.models.moviedetail
+package com.gokselkoc.tmdb.domain.models.moviedetail
 
 import com.fasterxml.jackson.annotation.JsonProperty
 

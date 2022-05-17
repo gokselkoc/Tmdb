@@ -7,7 +7,7 @@
 
         <variable
             name="movie_response"
-            type="com.gokselkoc.tmdb.models.movie.MovieResponse" />
+            type="com.gokselkoc.tmdb.domain.models.movie.MovieResponse" />
 
 
     </data>
@@ -15,7 +15,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context="com.gokselkoc.tmdb.ui.detail.movie.ContentDetailFragment">
+        tools:context="com.gokselkoc.tmdb.ui.detail.movie.MovieDetailFragment">
 
         <androidx.core.widget.NestedScrollView
             android:id="@+id/scroll_view"
@@ -163,13 +163,63 @@
                     android:id="@+id/genre_recycler_view"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
                     android:nestedScrollingEnabled="false"
+                    android:orientation="horizontal"
                     android:padding="@dimen/padding_8"
                     app:layoutManager="com.google.android.flexbox.FlexboxLayoutManager"
                     tools:listitem="@layout/genre_item">
 
                 </androidx.recyclerview.widget.RecyclerView>
+
+                <TextView
+                    android:id="@+id/video_tv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="@dimen/padding_10"
+                    android:paddingVertical="@dimen/padding_14"
+                    android:text="@string/video"
+                    android:textSize="@dimen/text_size_20">
+
+                </TextView>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/trailer_recycler_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:nestedScrollingEnabled="false"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/padding_8"
+                    tools:listitem="@layout/trailer_item"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager">
+
+                </androidx.recyclerview.widget.RecyclerView>
+                
+                <TextView
+                    android:id="@+id/images_tv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/images"
+                    android:textSize="@dimen/text_size_20"
+                    android:paddingHorizontal="@dimen/padding_10"
+                    android:paddingVertical="@dimen/padding_14">
+                </TextView>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/image_recycler_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    spacePaddingEnd="@{@dimen/padding_8}"
+                    spacePaddingStart="@{@dimen/padding_8}"
+                    android:nestedScrollingEnabled="false"
+                    android:orientation="horizontal"
+                    android:paddingVertical="@dimen/padding_8"
+                    android:paddingHorizontal="@dimen/padding_4"
+                    android:clipToPadding="false"
+                    tools:listitem="@layout/image_item"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager">
+
+                </androidx.recyclerview.widget.RecyclerView>
+
             </LinearLayout>
         </androidx.core.widget.NestedScrollView>
     </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,6 +1,5 @@
 package com.gokselkoc.tmdb.ui.home
 
-
 import android.os.Bundle
 import androidx.fragment.app.viewModels
 import com.gokselkoc.tmdb.R
@@ -11,8 +10,8 @@ import com.gokselkoc.tmdb.databinding.FragmentHomeBinding
 import com.gokselkoc.tmdb.extension.navigateSafe
 import com.gokselkoc.tmdb.extension.observe
 import com.gokselkoc.tmdb.extension.scrollEndListener
-import com.gokselkoc.tmdb.models.movie.MovieResponse
-import com.gokselkoc.tmdb.models.tvshows.TvShowsResponse
+import com.gokselkoc.tmdb.domain.models.movie.MovieResponse
+import com.gokselkoc.tmdb.domain.models.tvshows.TvShowsResponse
 import com.gokselkoc.tmdb.ui.home.adapter.PopularMoviesAdapter
 import com.gokselkoc.tmdb.ui.home.adapter.PopularTvShowsAdapter
 import dagger.hilt.android.AndroidEntryPoint
@@ -21,7 +20,6 @@ import kotlinx.coroutines.ExperimentalCoroutinesApi
 @ExperimentalCoroutinesApi
 @AndroidEntryPoint
 class HomeFragment : BaseVmDbFragment<FragmentHomeBinding>() {
-
 
     private val viewModel by viewModels<HomeViewModel>()
 
@@ -85,7 +83,7 @@ class HomeFragment : BaseVmDbFragment<FragmentHomeBinding>() {
         val bundle = Bundle().apply {
             putParcelable(Keys.MOVIE_RESPONSE, data)
         }
-        navigateSafe(resId = R.id.action_homeFragment_to_contentDetailFragment, bundle)
+        navigateSafe(resId = R.id.action_homeFragment_to_movie_detail_nav_graph, bundle)
     }
 
     private fun clickedPopularTvShowsItem(data: TvShowsResponse) {

@@ -7,7 +7,7 @@
 
         <variable
             name="item"
-            type="com.gokselkoc.tmdb.models.tvshows.TvShowsResponse" />
+            type="com.gokselkoc.tmdb.domain.models.tvshows.TvShowsResponse" />
 
         <variable
             name="viewModel"

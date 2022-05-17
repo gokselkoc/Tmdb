@@ -4,7 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.gokselkoc.tmdb.databinding.PopularTvShowsViewBinding
-import com.gokselkoc.tmdb.models.tvshows.TvShowsResponse
+import com.gokselkoc.tmdb.domain.models.tvshows.TvShowsResponse
 import com.gokselkoc.tmdb.ui.home.HomeViewModel
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 

@@ -4,7 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.gokselkoc.tmdb.databinding.GenreItemBinding
-import com.gokselkoc.tmdb.models.moviedetail.GenreResponse
+import com.gokselkoc.tmdb.domain.models.moviedetail.GenreResponse
 
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 

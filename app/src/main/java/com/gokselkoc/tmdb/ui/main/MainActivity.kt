@@ -10,18 +10,25 @@ import com.gokselkoc.tmdb.R
 import com.gokselkoc.tmdb.databinding.ActivityMainBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.ExperimentalCoroutinesApi
 
-
+@ExperimentalCoroutinesApi
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
     lateinit var binding: ActivityMainBinding
     lateinit var navController: NavController
+    lateinit var navHostFragment: NavHostFragment
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
         binding.lifecycleOwner = this
-        bottomMenuNavGraph(binding.mainFragmentNavHost.id, binding.mainBottomMenuNav)
+
+        navHostFragment =
+            supportFragmentManager.findFragmentById(binding.mainFragmentNavHost.id) as NavHostFragment
+        navController = navHostFragment.navController
+
+        bottomMenuNavGraph(binding.mainBottomMenuNav)
 
         binding.mainBottomMenuNav.setOnItemReselectedListener {
 
@@ -42,10 +49,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun bottomMenuNavGraph(navHostFragmentId: Int, bottomMenuView: BottomNavigationView) {
-        val navHostFragment =
-            supportFragmentManager.findFragmentById(navHostFragmentId) as NavHostFragment
-        navController = navHostFragment.navController
+    private fun bottomMenuNavGraph(bottomMenuView: BottomNavigationView) {
         bottomMenuView.setupWithNavController(navController)
     }
 }

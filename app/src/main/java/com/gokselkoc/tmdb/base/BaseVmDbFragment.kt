@@ -6,13 +6,15 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
+import androidx.fragment.app.DialogFragment
+import androidx.navigation.fragment.findNavController
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 
 @ExperimentalCoroutinesApi
 abstract class BaseVmDbFragment<DB : ViewDataBinding> :
     BaseFragment() {
 
-    private  var _binding: DB? = null
+    private var _binding: DB? = null
     val binding: DB get() = _binding!!
 
     open fun DB.initialize() {}
@@ -39,5 +41,6 @@ abstract class BaseVmDbFragment<DB : ViewDataBinding> :
         super.onDestroyView()
         _binding = null
     }
+
 
 }

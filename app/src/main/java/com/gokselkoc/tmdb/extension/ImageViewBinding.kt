@@ -2,6 +2,8 @@ package com.gokselkoc.tmdb.extension
 
 import android.content.Context
 import android.graphics.Color
+import android.util.Log
+import android.webkit.URLUtil
 import android.widget.ImageView
 import androidx.databinding.BindingAdapter
 import androidx.swiperefreshlayout.widget.CircularProgressDrawable
@@ -38,9 +40,12 @@ fun setMovieImage(imageView: ImageView, url: String?) {
     var imageUrl = url
     imageUrl = if (url == null) {
         Urls.DEFAULT_IMAGE_URL
+    } else if (URLUtil.isValidUrl(imageUrl)) {
+        imageUrl
     } else {
         Urls.BASE_IMAGE_URL + imageUrl
     }
+
     imageView.downLoadView(url = imageUrl,
         progressDrawable = placeHolderProgressBar(imageView.context))
 }

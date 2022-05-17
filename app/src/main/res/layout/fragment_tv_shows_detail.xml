@@ -7,13 +7,13 @@
 
         <variable
             name="tv_shows_response"
-            type="com.gokselkoc.tmdb.models.tvshows.TvShowsResponse" />
+            type="com.gokselkoc.tmdb.domain.models.tvshows.TvShowsResponse" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context="com.gokselkoc.tmdb.ui.detail.movie.ContentDetailFragment">
+        tools:context="com.gokselkoc.tmdb.ui.detail.movie.MovieDetailFragment">
 
         <androidx.core.widget.NestedScrollView
             android:id="@+id/scroll_view"

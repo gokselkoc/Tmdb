@@ -1,4 +1,4 @@
-package com.gokselkoc.tmdb.models.movie
+package com.gokselkoc.tmdb.domain.models.movie
 
 import android.os.Parcelable
 import com.fasterxml.jackson.annotation.JsonProperty
@@ -36,6 +36,6 @@ data class MovieResponse(
     @JsonProperty("video")
     val video: Boolean,
     @JsonProperty("vote_average")
-    val voteAverage: Double ,
+    val voteAverage: Double,
 
     ) : Parcelable

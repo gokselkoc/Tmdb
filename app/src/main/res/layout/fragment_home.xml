@@ -7,7 +7,7 @@
 
         <variable
             name="item"
-            type="com.gokselkoc.tmdb.models.movie.MovieResponse" />
+            type="com.gokselkoc.tmdb.domain.models.movie.MovieResponse" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -46,7 +46,7 @@
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
                     app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                    tools:listitem="@layout/content_item_view">
+                    tools:listitem="@layout/movies_item_view">
 
                 </androidx.recyclerview.widget.RecyclerView>
 

@@ -1,7 +1,9 @@
 package com.gokselkoc.tmdb.api
 
-import com.gokselkoc.tmdb.models.movie.MovieGeneralResponse
-import com.gokselkoc.tmdb.models.moviedetail.MovieDetailResponse
+import com.gokselkoc.tmdb.domain.models.moviedetail.trailer.MovieTrailersResponse
+import com.gokselkoc.tmdb.domain.models.movie.MovieGeneralResponse
+import com.gokselkoc.tmdb.domain.models.moviedetail.MovieDetailResponse
+import com.gokselkoc.tmdb.domain.models.moviedetail.image.MovieImageResponse
 import retrofit2.http.GET
 import retrofit2.http.Path
 import retrofit2.http.Query
@@ -18,13 +20,23 @@ interface MovieApiService {
         @Path("movieId") movieId: String,
     ): MovieDetailResponse
 
-    /*
+
     @GET("movie/upcoming")
     suspend fun getUpcomingMovies(
-        @Query("api_key") apiKey: String?,
         @Query("page") page: Int,
     ): MovieGeneralResponse
 
+    @GET("movie/{movieId}/videos")
+    suspend fun getMovieTrailers(
+        @Path("movieId") movieId: String,
+    ): MovieTrailersResponse
+
+
+    @GET("movie/{movieId}/images")
+    suspend fun getMovieImages(
+        @Path("movieId") movieId: String,
+    ): MovieImageResponse
+    /*
     @GET("movie/{movieId}/recommendations")
     suspend fun getRecommendations(
         @Query("api_key") apiKey: String?,

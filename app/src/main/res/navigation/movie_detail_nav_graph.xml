@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/movie_detail_nav_graph"
+    app:startDestination="@id/movieDetailFragment">
+
+    <fragment
+        android:id="@+id/movieDetailFragment"
+        android:name="com.gokselkoc.tmdb.ui.detail.movie.MovieDetailFragment"
+        android:label="MovieDetailFragment"
+        tools:layout="@layout/fragment_movie_detail">
+        <action
+            android:id="@+id/action_movieDetailFragment_to_trailerActivity"
+            app:destination="@id/trailerActivity" />
+        <argument
+            android:name="url_key"
+            app:argType="string" />
+
+        <action
+            android:id="@+id/action_movieDetailFragment_to_image_nav_graph"
+            app:destination="@id/image_nav_graph">
+
+            <argument
+                android:name="position"
+                app:argType="integer" />
+            <argument
+                android:name="images"
+                app:argType="com.gokselkoc.tmdb.domain.models.moviedetail.image.ImageUIModel[]" />
+        </action>
+        <action
+            android:id="@+id/action_movieDetailFragment_to_imageFragment2"
+            app:destination="@id/imageFragment2" />
+        <action
+            android:id="@+id/action_movieDetailFragment_self"
+            app:destination="@id/movieDetailFragment" />
+
+    </fragment>
+    <activity
+        android:id="@+id/trailerActivity"
+        android:name="com.gokselkoc.tmdb.ui.trailer.TrailerActivity"
+        android:label="TrailerActivity"
+        tools:layout="@layout/activity_trailer">
+        <argument
+            android:name="url_key"
+            app:argType="string" />
+    </activity>
+    <include app:graph="@navigation/image_nav_graph" />
+    <fragment
+        android:id="@+id/imageFragment2"
+        android:name="com.gokselkoc.tmdb.ui.image.ImageFragment"
+        android:label="ImageFragment" >
+        <argument
+            android:name="images"
+            app:argType="com.gokselkoc.tmdb.domain.models.moviedetail.image.ImageUIModel[]" />
+        <argument
+            android:name="position"
+            app:argType="integer" />
+    </fragment>
+</navigation>

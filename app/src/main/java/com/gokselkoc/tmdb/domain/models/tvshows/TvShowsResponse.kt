@@ -1,4 +1,4 @@
-package com.gokselkoc.tmdb.models.tvshows
+package com.gokselkoc.tmdb.domain.models.tvshows
 
 import android.os.Parcelable
 import com.fasterxml.jackson.annotation.JsonProperty

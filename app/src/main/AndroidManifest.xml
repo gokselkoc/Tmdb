@@ -24,6 +24,10 @@
             </intent-filter>
             <nav-graph android:value="@navigation/main_nav_graph" />
         </activity>
+        <activity android:name=".ui.trailer.TrailerActivity"
+            android:exported="true">
+
+        </activity>
     </application>
 
 </manifest>
